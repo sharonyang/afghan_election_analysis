@@ -1,0 +1,409 @@
+province,district,totalVotes
+Kabul,Kabul Center,3414100
+Kabul,Paghman,120200
+Kabul,Chahar Asyab,36200
+Kabul,Bagrami,54800
+Kabul,DehSabz,53400
+Kabul,Shakar Dara,81400
+Kabul,Musahi,23100
+Kabul,Mir Bacha kot,51700
+Kabul,Khak,14200
+Kabul,Kalakan,29900
+Kabul,Guldara,22600
+Kabul,Farza,21200
+Kabul,Estalef,33300
+Kabul,Qara Bagh,75600
+Kabul,Surubi,54800
+Kapisa,Kapisa Center,63500
+Kapisa,Hissa,44500
+Kapisa,Koh Band,23200
+Kapisa,Hissa,67200
+Kapisa,Nijrab,111000
+Kapisa,Tagab,80000
+Kapisa,Alasai,37400
+Parwan,Parwan Center,174200
+Parwan,Bagram,102400
+Parwan,Shinwari,40700
+Parwan,Sayyid  Khel,45100
+Parwan,Jabulussaraj,63100
+Parwan,Salang,25700
+Parwan,syahgird,95500
+Parwan,Koh,30700
+Parwan,Surkhi  parsa,40500
+Parwan,Shaykh  Ali,24400
+Wardak,Wardak  Center,39900
+Wardak,Nerkh,56300
+Wardak,Jalrez,52400
+Wardak,Chak,83300
+Wardak,Sayyid Abad,114800
+Wardak,Daimir Dad,30700
+Wardak,Hissa,36600
+Wardak,Jaghatu,45200
+Wardak,Markaz,117900
+Logar,Logar Center,104500
+Logar,Baraki Barak,86500
+Logar,Charkh,43900
+Logar,khushi,23800
+Logar,Mohammad Agha,74600
+Logar,Khar war,25900
+Logar,Azra,20200
+Nangarhar,Nangarhar Center,212900
+Nangarhar,Behsud,112300
+Nangarhar,Surkh Rud,119000
+Nangarhar,Chapar har,59600
+Nangarhar,Kama,76000
+Nangarhar,Kuzkunar,54400
+Nangarhar,Rodat,68300
+Nangarhar,Khugyani,128900
+Nangarhar,Bati Kot,74800
+Nangarhar,Deh Bala,39800
+Nangarhar,Pachir Waagam,42000
+Nangarhar,Darah,39800
+Nangarhar,Kot,51400
+Nangarhar,Goshta,26900
+Nangarhar,Achin,99100
+Nangarhar,Shinwar,59200
+Nangarhar,Muhmand,44400
+Nangarhar,Lalpoor,20200
+Nangarhar,Sher Zad,65500
+Nangarhar,Nazyan,14600
+Nangarhar,Hesarak,30400
+Nangarhar,Dur  Baba,23100
+Laghman,Laghman Center,128000
+Laghman,Qarghayee,96900
+Laghman,Alishing,70500
+Laghman,Alingar,95600
+Laghman,Dawlat Shah,32900
+Laghman,Bad pash,7300
+Panjsher,Panjsher  Center,18600
+Panjsher,Rukha,22600
+Panjsher,Darah,13700
+Panjsher,Hissa,39500
+Panjsher,Unaba,17800
+Panjsher,Shutul,10900
+Panjsher,Paryan,14600
+Panjsher,Ab shar,10900
+Baghlan,Baghlan Center,207600
+Baghlan,Dahana,58100
+Baghlan,Dushi,66100
+Baghlan,Nahreen,68300
+Baghlan,Baghlan,170500
+Baghlan,Khinjan,30100
+Baghlan,Andarab,25200
+Baghlan,Deh  Salah,31600
+Baghlan,Khwaja hejran,23600
+Baghlan,Burka,52000
+Baghlan,Tala Wa Barfak,29800
+Baghlan,Pul,27300
+Baghlan,Khost Wa Firing,62400
+Baghlan,Gozargah,10000
+Baghlan,Firing Wa Gharu,16400
+Bamyan,Bamyan Center,82500
+Bamyan,Shebar,29200
+Bamyan,Saighan,23700
+Bamyan,Kahmard,35800
+Bamyan,Yakawlang,86400
+Bamyan,Panjab,67300
+Bamyan,Waras,107800
+Ghazni,Ghazni Center,160800
+Ghazni,Wali M,19800
+Ghazni,Khwaja Omari,18700
+Ghazni,Waghaz,38100
+Ghazni,Deh Yak,48300
+Ghazni,Jaghatu,31300
+Ghazni,Andar,123300
+Ghazni,Zanakhan,12400
+Ghazni,Rashidan,17800
+Ghazni,Nawur,93500
+Ghazni,Qara Bagh,141100
+Ghazni,Giro,36100
+Ghazni,Ab Band,27200
+Ghazni,Jaghuri,174400
+Ghazni,Muqur,49700
+Ghazni,Malistan,81100
+Ghazni,Gelan,57200
+Ghazni,Ajristan,28400
+Ghazni,Nawa,29400
+Paktika,Paktika Center,49500
+Paktika,Mata Khan,24700
+Paktika,Yosuf Khel,13300
+Paktika,Yahya Khel,17200
+Paktika,Sar Rawza,22900
+Paktika,Omna,12000
+Paktika,Zarghun Shahr,29500
+Paktika,Gomal,7600
+Paktika,Jani Khel,23700
+Paktika,Surubi,12300
+Paktika,Urgoon,54600
+Paktika,Ziruk,19100
+Paktika,Nika,12300
+Paktika,Barmal,34400
+Paktika,Giyan,34400
+Paktika,DilaWa Khushamand,24900
+Paktika,Wazakhwah,22900
+Paktika,Wormamay,3400
+Paktika,Turwo,2000
+Paktya,Paktya Center,82600
+Paktya,Ahmadaba,27500
+Paktya,Zurmat,106300
+Paktya,Shwak,5500
+Paktya,Wuza Zadran,35100
+Paktya,Sayyid Karam,55000
+Paktya,Jaji,62200
+Paktya,Laja Ahmad khel,22500
+Paktya,Jani Khel,34500
+Paktya,Samkani,49400
+Paktya,Dand Patan,26300
+Paktya,laja mangel,18600
+Paktya,Mirzaka,8500
+Khost,Khost Center,135900
+Khost,Manduzay,55800
+Khost,Gurbuz,25800
+Khost,Tanay,58900
+Khost,Musa khel,40600
+Khost,Nadir Shah kot,31500
+Khost,Sabari,70100
+Khost,Tirzayee,44200
+Khost,Baak,21800
+Khost,Qalandar,10100
+Khost,Spera,24000
+Khost,Shamul,13500
+Khost,Jaji Maidan,23800
+Kunarha,Kunarha Center,32900
+Kunarha,Mara wara,20200
+Kunarha,Watapoor,27000
+Kunarha,Narang Wa Badil,29800
+Kunarha,Sar Kani,26900
+Kunarha,Shigal Wa Sheltan,29000
+Kunarha,Dara,54000
+Kunarha,Bar Kunar,21700
+Kunarha,Sawkai,35300
+Kunarha,Khas Kunar,34600
+Kunarha,Ghazi Abad,18500
+Kunarha,Dangam,16700
+Kunarha,Chapa Dara,30700
+Kunarha,Noorgal,31500
+Kunarha,Nari,27200
+Nooristan,Nooristan Center,13400
+Nooristan,Waygal,19400
+Nooristan,Wama,10900
+Nooristan,Noor Gram,32000
+Nooristan,Duab,7700
+Nooristan,Kamdesh,24900
+Nooristan,Mandol,19500
+Nooristan,Bargi Matal,15400
+Badakhshan,Badakhshan center,66000
+Badakhshan,Argo,77400
+Badakhshan,Arghanj Khwah,15900
+Badakhshan,Yaftal,52100
+Badakhshan,Khash,37700
+Badakhshan,Baharak,28500
+Badakhshan,Darayim,60900
+Badakhshan,Kohistan,16400
+Badakhshan,Yawan,32100
+Badakhshan,Jurm,37200
+Badakhshan,Tashkan,29500
+Badakhshan,Shuhada,34100
+Badakhshan,Shahri Buzurg,51700
+Badakhshan,Raghistan,39100
+Badakhshan,Kishm,79900
+Badakhshan,Wardooj,21600
+Badakhshan,Tagab,27800
+Badakhshan,Yamgan,25400
+Badakhshan,Shighnan,27600
+Badakhshan,Khwahan,16300
+Badakhshan,Kufab,22000
+Badakhshan,Darwaz,26100
+Badakhshan,Eshkashim,13700
+Badakhshan,Shiki,26000
+Badakhshan,Zebak,7800
+Badakhshan,Kiran Wa Menjan,9400
+Badakhshan,Darwaz,22900
+Badakhshan,Wakhan,14800
+Takhar,Takhar  Center,223100
+Takhar,Hazar Sumuch,13600
+Takhar,Baharak,30600
+Takhar,Bangi,34700
+Takhar,Chal,27900
+Takhar,Namak Ab,12000
+Takhar,Kalafgan,34800
+Takhar,Farkhar,46300
+Takhar,Khwaja Ghar,66200
+Takhar,Rustaq,162200
+Takhar,Eshkamesh,58300
+Takhar,Dashti Qala,31600
+Takhar,Warsaj,37500
+Takhar,Khwaja Bahawuddin,23000
+Takhar,Darqad,26600
+Takhar,Chahab,77700
+Takhar,Yangi Qala,44000
+Kunduz,Kunduz Center,311600
+Kunduz,Chahar Darah,72600
+Kunduz,Ali Abad,46600
+Kunduz,Khan Abad,159100
+Kunduz,Hazrati Imam Sahib,229800
+Kunduz,Dasht,83700
+Kunduz,Qala,68800
+Samangan,Samangan Center,102400
+Samangan,Hazrat,40800
+Samangan,Khuram Wa Sarbagh,39400
+Samangan,Feroz  Nakhcheer,12900
+Samangan,Rui,45100
+Samangan,Dara,70600
+Samangan,Dara,63900
+Balkh,Balkh Center,379300
+Balkh,Nahri Shahi,44300
+Balkh,Dehdadi,66600
+Balkh,Char kent,43900
+Balkh,Marmul,11300
+Balkh,Balkh,118400
+Balkh,Sholgara,112600
+Balkh,Chimtal,90600
+Balkh,Dawlat Abad,103600
+Balkh,Khulm,70400
+Balkh,Char Bolak,80100
+Balkh,Shortepa,39100
+Balkh,Kaldar,19700
+Balkh,Kishindeh,48100
+Balkh,Zari,43300
+Saripul,Saripul Center,153400
+Saripul,Sayyad,53900
+Saripul,Kohistanat,79100
+Saripul,Sozma Qala,48900
+Saripul,Sancharak,100000
+Saripul,Gosfandi,55900
+Saripul,Balkhab,49800
+Ghor,Ghor  Center,133900
+Ghor,Duleena,35600
+Ghor,Dawlatyar,32299
+Ghor,Char Sada,27100
+Ghor,Pasaband,93800
+Ghor,Shahrak,59100
+Ghor,Lal Wa SarJangal,110700
+Ghor,Taywara,90400
+Ghor,Tulak,50800
+Ghor,Saghar,34300
+Daykundi,Daykundi Center,40300
+Daykundi,Shahristan,65700
+Daykundi,Ishterlai,47000
+Daykundi,Khedir,46100
+Daykundi,Giti,33100
+Daykundi,Miramor,61900
+Daykundi,Sang,50100
+Daykundi,Kejran,34700
+Daykundi,patoo,31900
+Urozgan,Urozgan Center,101500
+Urozgan,Dehraoud,60300
+Urozgan,Chora,50500
+Urozgan,Shahidhassas,58300
+Urozgan,Khas Urozgan,55900
+Urozgan,Gizab,34900
+Urozgan,Chinarto,12700
+Zabul,Zabul Center,34900
+Zabul,Tarang Wa Jaldak,16900
+Zabul,Shinkai,23300
+Zabul,Mizan,13600
+Zabul,Arghandab,32299
+Zabul,Shah Joi,57700
+Zabul,Daichopan,38900
+Zabul,Atghar,8600
+Zabul,Naw Bahar,18600
+Zabul,Shemel Zayi,25500
+Zabul,Kakar,23800
+Kandahar,Kandahar Center,505300
+Kandahar,Arghandab,61200
+Kandahar,Daman,34300
+Kandahar,Panjwayee,86100
+Kandahar,Zhire,84800
+Kandahar,Shah Wali Kot,42900
+Kandahar,Khakrez,22500
+Kandahar,Arghistan,34000
+Kandahar,Ghorak,9600
+Kandahar,Maiwand,58000
+Kandahar,Spin Boldak,99400
+Kandahar,Nesh,13200
+Kandahar,Miyanishin,14900
+Kandahar,Shorabak,11400
+Kandahar,Maruf,32600
+Kandahar,Reg,8800
+Kandahar,Dand,44300
+Kandahar,Takhta pul,12500
+Kandahar,Jawzjan Center,164900
+Kandahar,Khwaja Dukoh,26600
+Kandahar,Khanaqa,23000
+Kandahar,Mingajik,42400
+Kandahar,Qush Tepa,23200
+Kandahar,Khamyab,13800
+Kandahar,Aqchah,75300
+Kandahar,Faizabad,41100
+Kandahar,Mardyan,38100
+Kandahar,Qarqin,24400
+Kandahar,Darzab,48600
+Faryab,Faryab Center,80300
+Faryab,Pashtun kot,186500
+Faryab,Khwaja Sabz Posh i Wali,50200
+Faryab,Almar,69500
+Faryab,Bilchiragh,51600
+Faryab,Shirin Tagab,80500
+Faryab,Qaisar,140800
+Faryab,Gurziwan,74900
+Faryab,Dawlat Abad,48100
+Faryab,Kohistan,53900
+Faryab,Qaram Qul,19400
+Faryab,Qurghan,46600
+Faryab,Andkhoy,39400
+Faryab,Khani Charbagh,22900
+Helmand,Helmand Center,102000
+Helmand,Nad Ali,90100
+Helmand,Nawa,91900
+Helmand,Nahr,116100
+Helmand,Washer,15400
+Helmand,Garm Ser,86900
+Helmand,Nawzad,50300
+Helmand,Sangin,59100
+Helmand,Musa Qala,58400
+Helmand,Kajaki,70500
+Helmand,Reg,26100
+Helmand,Baghran,80600
+Helmand,Dishu,20200
+Helmand,Marja,26600
+Badghis,Badghis Center,65300
+Badghis,Ab Kamari,72700
+Badghis,Muqur,23500
+Badghis,Qadis,89900
+Badghis,Murghab,96000
+Badghis,Jawand,77900
+Badghis,Ghormach,54500
+Herat,Herat  Center,449600
+Herat,Enjil,241700
+Herat,Guzera,145000
+Herat,Karrukh,63200
+Herat,Zendahjan,56400
+Herat,Pashtun Zarghun,99100
+Herat,Kushk,123100
+Herat,Gulran,93100
+Herat,Adraskan,53100
+Herat,Kushk,45200
+Herat,Ghoryan,87500
+Herat,Obe,74800
+Herat,Kohsan,53700
+Herat,Shindand,176800
+Herat,Fersi,30300
+Herat,Chishti Sharif,23500
+Farah,Farah Center,110400
+Farah,Pushtrud,40200
+Farah,Khak,29900
+Farah,Qala,30400
+Farah,Shibkoh,23100
+Farah,Bala Buluk,70600
+Farah,Anar Dara,27500
+Farah,Bakwa,35100
+Farah,Lash,27700
+Farah,Gulistan,42900
+Farah,Pur Chaman,52800
+Nimroz,Nimroz Center,56000
+Nimroz,Kang,22100
+Nimroz,Asl,23400
+Nimroz,Char Burjak,26200
+Nimroz,Khashrod,25100
+Nimroz,Dularam,6500

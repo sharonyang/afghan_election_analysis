@@ -1,2 +1,14 @@
-# afghan_election_analysis
-Quantitative analysis of vote turnout of Afghanistan's 2014 Presidential election.
+# Analysis of 2014 Afghan Presidential Election
+
+Completed
+====
+
+- Code to convert 
+
+
+To Do
+====
+
+- Code to generate two-dimensional histograms of distributions
+  of votes and turnouts to detect election fraud.
+- More to come...
