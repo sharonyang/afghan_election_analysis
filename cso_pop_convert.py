@@ -36,7 +36,7 @@ data_set = data_set[1:]
 prov_list = prov_list[:-1]
 
 # Schema for our final product.
-final_product = 'province,district,totalVotes\n'
+final_product = 'province,district,totalPop\n'
 
 # Go through all district, save info.
 for dat in range(len(data_set)):

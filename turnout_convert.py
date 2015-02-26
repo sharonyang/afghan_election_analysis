@@ -4,24 +4,7 @@
 # Output: print out to stdout for districts with "suspicious"
 #         voting stations sorted by highest count to lowest
 #
-# Output:
-# Districts with stations with 0 vs. 600 votes
-# ('Paktika,Paktika', 114)
-# ('Paktya,Paktya', 44)
-# ('Na,Na', 34)
-# ('Wardak,Wardak', 25)
-# ('Khost,Khost', 18)
-# ('Ghor,Ghor', 16)
-# ('Ghazni,Ghazni', 8)
-# ('Kabul,Kabul', 4)
-# ('Logar,Logar', 4)
-# ('Zabul,Zabul', 3)
-# ('Faryab,Faryab', 2)
-# ('Herat,Herat', 2)
-# ('Badghis,Badghis', 2)
-# ('Kapisa,Kapisa', 1)
-# ('Nooristan,Nooristan', 1)
-# ('Badakhshan,Badakhshan', 1)
+# Output: printout to stdout. Stored in "turnout_convert.txt"
 
 import operator
 
@@ -62,7 +45,7 @@ for line in data_set:
     # Abdullah and Ghanhi vote counts, and total
     # vote count.
     prov = line_set[0].replace('\"', '')
-    dist = line_set[0].replace('\"', '')
+    dist = line_set[1].replace('\"', '')
     key = prov.title() + ',' + dist.title()
     abdullah = int(line_set[4].replace('\"', ''))
     ghanhi = int(line_set[5].replace('\"', ''))
@@ -93,7 +76,56 @@ sorted_dist = sorted(dist_flag.items(),
     key=operator.itemgetter(1), reverse=True)
 
 print "Districts with stations with 0 vs. 600 votes"
+print "('Province,District', <station_count>)"
 for d in sorted_dist:
     if d[1] != 0:
         print d
+
+# Get population data from 2013-2014 CSO data
+# converted by cso_pop_convert.py.
+turnout_dict = {}
+with open('cso_pop_fixed.csv', 'r') as population:
+    pop_data = population.read()
+
+pop_data = pop_data.split('\n')
+
+# Go through population data along with turnout
+# data to see if there are districts with SUPER
+# high turnout rates.
+missing_dist = []
+ignore_flag = True
+for pop_line in pop_data:
+    if ignore_flag:
+        ignore_flag = False
+        continue
+    if pop_line == '':
+    	continue
+    curr = pop_line.split(',')
+    key = curr[0] + ',' + curr[1]
+    # Note if there is missing population data.
+    if not output_dict.has_key(key):
+    	missing_dist.append(key)
+        continue
+    voted = output_dict[key][2]
+    turnout_dict[key] = float(voted) / int(curr[2])
+
+# Sort by decreasing turnout rates.
+sorted_turnout = sorted(turnout_dict.items(),
+    key=operator.itemgetter(1), reverse=True)
+
+# Print out result.
+print ""
+print ""
+print "Districts with greater than 95% turnout"
+print "('Province,District', <turnout %>)"
+for d in sorted_turnout:
+    if d[1] - 0.95 > 0:
+        print '(\'' + d[0] + '\', ' + str(d[1] * 100) + ')'
+ 
+print ""
+print "We are missing population from the following districts:"
+print "[<Province,District>,... ]"
+print missing_dist
+
+print ""
 
