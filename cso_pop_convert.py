@@ -58,9 +58,11 @@ for dat in range(len(data_set)):
                     continue
                 reg = re.search('[0-9]', output)
                 if reg:
+                    output = output.replace(dist_name + ',', '')
                     output = output.replace(dist_tot, '')
+                    dist_name = dist_name.title().replace(' ', '')
                     dist_tot = str(int(float(dist_tot) * 1000))
-                    output += dist_tot
+                    output += dist_name + ',' + dist_tot
                     final_product += output + '\n'
 
 # Output file is saved as 'cso_pop_fixed.csv'.

@@ -46,7 +46,7 @@ for line in data_set:
     # vote count.
     prov = line_set[0].replace('\"', '')
     dist = line_set[1].replace('\"', '')
-    key = prov.title() + ',' + dist.title()
+    key = prov.title() + ',' + dist.title().replace(' ', '')
     abdullah = int(line_set[4].replace('\"', ''))
     ghanhi = int(line_set[5].replace('\"', ''))
     total = int(line_set[6].replace('\"', ''))
@@ -92,8 +92,10 @@ pop_data = pop_data.split('\n')
 # Go through population data along with turnout
 # data to see if there are districts with SUPER
 # high turnout rates.
+extra_pop = []
 missing_dist = []
 ignore_flag = True
+pop_dict = {}
 for pop_line in pop_data:
     if ignore_flag:
         ignore_flag = False
@@ -102,12 +104,23 @@ for pop_line in pop_data:
     	continue
     curr = pop_line.split(',')
     key = curr[0] + ',' + curr[1]
+    key = key.replace('Center', '')
+
+    key = key.replace('Kunarha', 'Kunar')
+    key = key.replace('-', '')
+
     # Note if there is missing population data.
     if not output_dict.has_key(key):
-    	missing_dist.append(key)
+        extra_pop.append(key)
+        continue
+    pop_dict[key] = int(curr[2])
+
+for key in output_dict:
+    if not pop_dict.has_key(key):
+        missing_dist.append(key)
         continue
     voted = output_dict[key][2]
-    turnout_dict[key] = float(voted) / int(curr[2])
+    turnout_dict[key] = float(voted) / pop_dict[key]
 
 # Sort by decreasing turnout rates.
 sorted_turnout = sorted(turnout_dict.items(),
@@ -117,15 +130,23 @@ sorted_turnout = sorted(turnout_dict.items(),
 print ""
 print ""
 print "Districts with greater than 95% turnout"
-print "('Province,District', <turnout %>)"
+print "'Province,District','PopulationVoted','TotalPopulation',<turnout %>"
 for d in sorted_turnout:
     if d[1] - 0.95 > 0:
-        print '(\'' + d[0] + '\', ' + str(d[1] * 100) + ')'
+        print d[0] + ',' + str(output_dict[d[0]][2]) +\
+            ',' + str(pop_dict[d[0]]) + ',' + str(d[1] * 100)
  
 print ""
 print "We are missing population from the following districts:"
 print "[<Province,District>,... ]"
-print missing_dist
+print ""
+print "In turnout data but not in population data:"
+print sorted(missing_dist)
+print "count: " + str(len(missing_dist))
+print ""
 
+print "In population data but not in turnout data:"
+print sorted(extra_pop)
+print "count: " + str(len(extra_pop))
 print ""
 

@@ -4,48 +4,48 @@ Districts with stations with 0 vs. 600 votes
 ('Paktika,Giyan', 34)
 ('Paktika,Urgoon', 15)
 ('Paktika,Nika', 13)
-('Wardak,Chaki Wardak', 12)
-('Paktya,Jaji Aryob', 11)
-('Paktika,Zarghun Shah', 11)
-('Paktya,Laja Ahmad K', 9)
-('Paktika,Sar Rawza', 9)
+('Wardak,ChakiWardak', 12)
+('Paktika,ZarghunShah', 11)
+('Paktya,JajiAryob', 11)
+('Paktika,SarRawza', 9)
+('Paktya,LajaAhmadK', 9)
 ('Paktika,Omna', 7)
-('Paktya,Jani Khel', 7)
+('Paktya,JaniKhel', 7)
+('Wardak,SayydAbad', 7)
 ('Ghazni,Andar', 7)
-('Wardak,Sayyd Abad', 7)
 ('Ghor,Shahrak', 6)
 ('Paktika,Wazakhwah', 6)
 ('Paktika,Barmal', 5)
+('Paktya,SayyidKaram', 5)
 ('Khost,Gurbuz', 5)
-('Ghor,Char Sada', 5)
-('Paktya,Sayyid Karam', 5)
+('Ghor,CharSada', 5)
 ('Wardak,Daymirdad', 4)
-('Khost,Khost', 4)
-('Khost,Musa Khel', 4)
+('Khost,MusaKhel', 4)
 ('Paktika,Gomal', 4)
+('Khost,Khost', 4)
+('Logar,PuliAlam', 4)
 ('Paktya,Samkani', 4)
-('Logar,Puli Alam', 4)
 ('Paktika,Surubi', 3)
-('Paktya,Wuza Zadran', 3)
-('Paktika,Wor Mamy', 3)
+('Paktya,DandPatan', 3)
+('Paktika,WorMamy', 3)
 ('Zabul,Daichopan', 3)
-('Khost,Ali Sher', 3)
+('Khost,AliSher', 3)
 ('Kabul,Kabul', 3)
-('Paktya,Dand Patan', 3)
+('Paktya,WuzaZadran', 3)
+('Faryab,PashtunKot', 2)
 ('Wardak,Nerkh', 2)
 ('Herat,Shindand', 2)
-('Faryab,Pashtun Kot', 2)
 ('Khost,Tanay', 2)
-('Paktika,Yahya Khel', 2)
 ('Paktya,Ahmadaba', 2)
 ('Badghis,Ghormach', 2)
+('Paktika,YahyaKhel', 2)
 ('Kapisa,Nijrab', 1)
 ('Paktika,Sharan', 1)
-('Ghazni,Deh Yak', 1)
 ('Ghor,Saghar', 1)
 ('Ghor,Duleena', 1)
+('Paktika,YosufKhel', 1)
 ('Ghor,Dawlatyar', 1)
-('Paktika,Yosuf Khel', 1)
+('Ghazni,DehYak', 1)
 ('Kabul,Surubi', 1)
 ('Ghor,Taywara', 1)
 ('Ghor,Tulak', 1)
@@ -54,19 +54,31 @@ Districts with stations with 0 vs. 600 votes
 
 
 Districts with greater than 95% turnout
-('Province,District', <turnout %>)
-('Paktika,Gomal', 487.815789474)
-('Paktika,Turwo', 385.5)
-('Paktika,Surubi', 191.284552846)
-('Nooristan,Wama', 169.779816514)
-('Khost,Qalandar', 146.623762376)
-('Paktya,Shwak', 137.018181818)
-('Paktya,Ahmadaba', 128.32)
-('Paktika,Nika', 122.18699187)
-('Kandahar,Reg', 112.261363636)
-('Paktika,Jani Khel', 112.054852321)
-('Khost,Jaji Maidan', 107.74789916)
-('Paktika,Wazakhwah', 103.681222707)
-('Paktika,Yahya Khel', 100.011627907)
-('Kandahar,Shorabak', 95.9385964912)
+'Province,District','PopulationVoted','TotalPopulation',<turnout %>
+Paktika,Gomal,37074,7600,487.815789474
+Paktika,Turwo,7710,2000,385.5
+Paktika,Surubi,23528,12300,191.284552846
+Nooristan,Wama,18506,10900,169.779816514
+Khost,Qalandar,14809,10100,146.623762376
+Paktya,Shwak,7536,5500,137.018181818
+Paktya,Ahmadaba,35288,27500,128.32
+Paktika,Nika,15029,12300,122.18699187
+Kandahar,Reg,9879,8800,112.261363636
+Paktika,JaniKhel,26557,23700,112.054852321
+Khost,JajiMaidan,25644,23800,107.74789916
+Paktika,Wazakhwah,23743,22900,103.681222707
+Paktika,YahyaKhel,17202,17200,100.011627907
+Khost,Khost,132814,135900,97.7292126564
+Kandahar,Shorabak,10937,11400,95.9385964912
+
+We are missing population from the following districts:
+[<Province,District>,... ]
+
+In turnout data but not in population data:
+['Badakhshan,ArghanjKhwa', 'Badakhshan,Darwaz-E-Bal', 'Badakhshan,Darwaz-E-Pay', 'Badakhshan,FaizAbad', 'Badakhshan,Ragistan', 'Badakhshan,Shahr-E-Buzurg', 'Badakhshan,Yaftal-E-Sufla', 'Badghis,BalaMurgha', 'Badghis,Qala-E-Now', 'Baghlan,Baglan-E-Jade', 'Baghlan,Dahana-E-Ghuri', 'Baghlan,Gozargah-E-Nur', 'Baghlan,Jalga', 'Baghlan,KhostWaFiri', 'Baghlan,Pul-E-Hisar', 'Baghlan,Pul-E-Khumri', 'Baghlan,TalaWaBarf', 'Balkh,Mazar-E-Sharif', 'Balkh,Nahr-E-Shahi', 'Daykundi,Geti', 'Daykundi,Gizab', 'Daykundi,Nili', 'Daykundi,Sang-E-Takht', 'Farah,Khak-E-Safed', 'Farah,Lash-E-Juwayn', 'Farah,Qala-E-Kah', 'Farah,ShibKoh', 'Faryab,BilChiragh', 'Faryab,KhaniCharba', 'Faryab,KhwajaSabzPosh', 'Faryab,Maimana', 'Ghazni,KhwajaOmar', 'Ghazni,WaliMoham', 'Ghor,Chighcheran', 'Ghor,LalWaSarjan', 'Helmand,Lashkargah', 'Helmand,Nahr-E-Saraj', 'Helmand,Nawa-E-Barakzayi', 'Helmand,Reg\xcd\xb2E\xcd\xb2KhanNi', 'Helmand,SanginQala', 'Herat,Chisht-E-Shar', 'Herat,Guzara', 'Herat,Kushk(Rubat-E', 'Herat,Kushk-E-Kuhn', 'Herat,PashtunZarg', 'Herat,Zendajan', 'Jawzjan,Aqchah', 'Jawzjan,Darzab', 'Jawzjan,Faizabad', 'Jawzjan,Khamyab', 'Jawzjan,Khanaqa', 'Jawzjan,KhwajaDuko', 'Jawzjan,Mardyan', 'Jawzjan,Mingajik', 'Jawzjan,Qarqin', 'Jawzjan,QushTepa', 'Jawzjan,Sheberghan', 'Kabul,Khak-E-Jabar', 'Kabul,MirBachaKo', 'Kandahar,Nish', 'Kapisa,Hissa-E-Awali', 'Kapisa,Hissa-E-Duwu', 'Kapisa,MahmudiRaq', 'Khost,AliSher', 'Khost,NadirshahKo', 'Kunar,AsadAbad', 'Kunar,Dara-E-Pech', 'Kunar,Narang', 'Kunar,NoorGal', 'Kunar,ShigalWaShi', 'Kunduz,CharDara', 'Kunduz,Dasht-E-Archi', 'Kunduz,Hazrat-E-Imam', 'Kunduz,Qala-E-Zal', 'Laghman,Mehtarlam', 'Logar,MohammadA', 'Logar,PuliAlam', 'Na,Na', 'Nangarhar,Chaparhar', 'Nangarhar,Darah-E-Noor', 'Nangarhar,Jalalabad', 'Nangarhar,KuzKunar', 'Nangarhar,MuhmandDara', 'Nangarhar,PachirWaga', 'Nimroz,Asl-E-Chakhan', 'Nimroz,Zaranj', 'Nooristan,Barg-E-Matal', 'Nooristan,Paroon', 'Paktika,DilaWaKhush', 'Paktika,Sharan', 'Paktika,WorMamy', 'Paktika,ZarghunShah', 'Paktya,Gardez', 'Paktya,JajiAryob', 'Paktya,LajaAhmadK', 'Panjshir,Bazarak', 'Panjshir,Darah', 'Panjshir,Hissa-E-Awal', 'Panjshir,Paryan', 'Panjshir,Rukha', 'Panjshir,Shutul', 'Panjshir,Unaba', 'Parwan,Charikar', 'Parwan,KohiSafi', 'Parwan,SayidKhial', 'Parwan,SyahgirdiGho', 'Samangan,Aybak', 'Samangan,Dara-E-Soof-E-Xxxxxx', 'Samangan,FerozNakhchi', 'Samangan,Hazrat-E-\xcd\xb2Sultan', 'Samangan,KhuramWaSabagh', 'Samangan,Roi-Do-Ab', 'Sar-E-Pul,Balkhab', 'Sar-E-Pul,Gosfandi', 'Sar-E-Pul,Kohistanat', 'Sar-E-Pul,SangCharak', 'Sar-E-Pul,Sar-E-Pul', 'Sar-E-Pul,Sayad', 'Sar-E-Pul,SozmaQala', 'Takhar,ChahAb', 'Takhar,Dasht-E-Qala', 'Takhar,HazarSumuc', 'Takhar,KhwajaBaha', 'Takhar,Taluqan', 'Urozgan,Shahid-E-Hass', 'Urozgan,Tirinkot', 'Wardak,ChakiWardak', 'Wardak,Daymirdad', 'Wardak,Hissa-E-Awali', 'Wardak,Markaz-E-Beh', 'Wardak,MaydanShah', 'Wardak,SayydAbad', 'Zabul,Qalat', 'Zabul,TarankWaJa']
+count: 134
+
+In population data but not in turnout data:
+['Badakhshan,ArghanjKhwah', 'Badakhshan,Badakhshan', 'Badakhshan,Darwaz', 'Badakhshan,Darwaz', 'Badakhshan,Raghistan', 'Badakhshan,ShahriBuzurg', 'Badakhshan,Yaftal', 'Badghis,Badghis', 'Badghis,Murghab', 'Baghlan,170500', 'Baghlan,Baghlan', 'Baghlan,Dahana', 'Baghlan,Gozargah', 'Baghlan,KhostWaFiring', 'Baghlan,KhwajaHejran', 'Baghlan,Pul', 'Baghlan,TalaWaBarfak', 'Balkh,118400', 'Balkh,NahriShahi', 'Daykundi,Daykundi', 'Daykundi,Giti', 'Daykundi,Patoo', 'Daykundi,Sang', 'Farah,Khak', 'Farah,Lash', 'Farah,Qala', 'Farah,Shibkoh', 'Faryab,Bilchiragh', 'Faryab,Faryab', 'Faryab,KhaniCharbagh', 'Faryab,KhwajaSabzPoshIWali', 'Ghazni,KhwajaOmari', 'Ghazni,Nawa', 'Ghazni,WaliM', 'Ghor,Ghor', 'Ghor,LalWaSarjangal', 'Helmand,Baghran', 'Helmand,Dishu', 'Helmand,Helmand', 'Helmand,Marja', 'Helmand,Nahr', 'Helmand,Nawa', 'Helmand,Reg', 'Helmand,Sangin', 'Herat,ChishtiSharif', 'Herat,Guzera', 'Herat,Kushk', 'Herat,Kushk', 'Herat,PashtunZarghun', 'Herat,Zendahjan', 'Kabul,Khak', 'Kabul,MirBachaKot', 'Kandahar,Aqchah', 'Kandahar,Dand', 'Kandahar,Darzab', 'Kandahar,Faizabad', 'Kandahar,Jawzjan', 'Kandahar,Khamyab', 'Kandahar,Khanaqa', 'Kandahar,KhwajaDukoh', 'Kandahar,Mardyan', 'Kandahar,Mingajik', 'Kandahar,Nesh', 'Kandahar,Qarqin', 'Kandahar,QushTepa', 'Kandahar,TakhtaPul', 'Kapisa,Alasai', 'Kapisa,Hissa', 'Kapisa,Hissa', 'Kapisa,Kapisa', 'Khost,NadirShahKot', 'Khost,Tirzayee', 'Kunar,Dara', 'Kunar,Kunar', 'Kunar,NarangWaBadil', 'Kunar,Noorgal', 'Kunar,ShigalWaSheltan', 'Kunduz,ChaharDarah', 'Kunduz,Dasht', 'Kunduz,HazratiImamSahib', 'Kunduz,Qala', 'Laghman,BadPash', 'Laghman,Laghman', 'Logar,Logar', 'Logar,MohammadAgha', 'Nangarhar,ChaparHar', 'Nangarhar,Darah', 'Nangarhar,Kuzkunar', 'Nangarhar,Muhmand', 'Nangarhar,Nangarhar', 'Nangarhar,PachirWaagam', 'Nimroz,Asl', 'Nimroz,Dularam', 'Nimroz,Nimroz', 'Nooristan,BargiMatal', 'Nooristan,Mandol', 'Nooristan,Nooristan', 'Paktika,DilawaKhushamand', 'Paktika,Paktika', 'Paktika,Wormamay', 'Paktika,ZarghunShahr', 'Paktya,Jaji', 'Paktya,LajaAhmadKhel', 'Paktya,LajaMangel', 'Paktya,Mirzaka', 'Paktya,Paktya', 'Panjsher,AbShar', 'Panjsher,Darah', 'Panjsher,Hissa', 'Panjsher,Panjsher', 'Panjsher,Paryan', 'Panjsher,Rukha', 'Panjsher,Shutul', 'Panjsher,Unaba', 'Parwan,Koh', 'Parwan,Parwan', 'Parwan,SayyidKhel', 'Parwan,Syahgird', 'Samangan,Dara', 'Samangan,Dara', 'Samangan,FerozNakhcheer', 'Samangan,Hazrat', 'Samangan,KhuramWaSarbagh', 'Samangan,Rui', 'Samangan,Samangan', 'Saripul,Balkhab', 'Saripul,Gosfandi', 'Saripul,Kohistanat', 'Saripul,Sancharak', 'Saripul,Saripul', 'Saripul,Sayyad', 'Saripul,SozmaQala', 'Takhar,Chahab', 'Takhar,DashtiQala', 'Takhar,HazarSumuch', 'Takhar,KhwajaBahawuddin', 'Takhar,Takhar', 'Urozgan,Chinarto', 'Urozgan,Gizab', 'Urozgan,Shahidhassas', 'Urozgan,Urozgan', 'Wardak,Chak', 'Wardak,DaimirDad', 'Wardak,Hissa', 'Wardak,Markaz', 'Wardak,SayyidAbad', 'Wardak,Wardak', 'Zabul,Kakar', 'Zabul,TarangWaJaldak', 'Zabul,Zabul']
+count: 150
 
