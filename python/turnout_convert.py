@@ -1,6 +1,6 @@
 # Written by Sharon Yang to use preliminary turnout data
 # to output districts with "suspicious" voting stations.
-# Input: '../raw_data/raw_votes.csv' (See below for how to get it.)
+# Input: '../raw_data/raw_votes_runoff.csv' (See below for how to get it.)
 # Output: print out to stdout for districts with "suspicious"
 #         voting stations sorted by highest count to lowest
 #
@@ -12,7 +12,7 @@ import operator
 # which is located at https://github.com/developmentseed/aodp-data/tree/runoff
 # The file specifically is at:
 # https://github.com/developmentseed/aodp-data/blob/runoff/data/2014_president_election/results/preliminary-results/2014_afghanistan_preliminary_runoff_election_results.csv
-with open('../raw_data/raw_votes.csv', 'r') as ff:
+with open('../raw_data/raw_votes_runoff.csv', 'r') as ff:
     data = ff.read()
 
 data_set = data.split('\n')
