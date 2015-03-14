@@ -18,7 +18,6 @@
 #       * ../raw_data/raw_observers_first_round.csv
 #       * ../raw_data/raw_observers_runoff.csv
 #       * ../raw_data/raw_first_round_turnout.csv
-#       * ../clean_data/cso_pop_fixed.csv
 #       * ../clean_data/runoff_votes_and_turnout.csv
 #
 # Outputs:
@@ -35,7 +34,12 @@
 #         mapping between numbers (used in the above graphs) and actual
 #         province names.
 #
+# Precondition: there are 34 provinces, and it is essential that their
+# names match across all of the input CSV files!
+#
 
+
+import csv
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -56,10 +60,8 @@ RUNOFF_OBS_DEP_FILE = RAW_DATA_DIR + "raw_observers_runoff.csv"
 # CSV file for first round turnout data (by province).
 FIRST_ROUND_TURNOUT_FILE = RAW_DATA_DIR + "raw_first_round_turnout.csv"
 
-# CSV file for "fixed" population data.
-POP_FILE = CLEAN_DATA_DIR + "cso_pop_fixed.csv"
-
-# CSV file for runoff votes and turnout data (by district).
+# CSV file for runoff votes and turnout data (by district). This is also
+# what we'll use to get population data.
 RUNOFF_TURNOUT_FILE = CLEAN_DATA_DIR + "runoff_votes_and_turnout.csv"
 
 # OUTPUT FILES
@@ -83,37 +85,75 @@ NUM_TO_PROV_FILE = CLEAN_DATA_DIR + "num_to_province.csv"
 
 # Dicts to track province data (cached to avoid regeneration).
 provinceNumToName = None
-provinceNumToPop = None
 
 
-# This function returns a dictionary that maps province numbers to province
-# names. The number for each province is assigned by finding its index in a
-# list of sorted province names.
-def getProvinceNumToName():
+# This function populates a dictionary that maps province numbers to
+# province names. This dictionary is stored in the global variable
+# provinceNumToName.
+#
+# The number for each province is assigned by finding its index in a list
+# of sorted province names. Note that this function uses the data in
+# RUNOFF_TURNOUT_FILE.
+#
+def populateProvinceNumToName():
     global provinceNumToName
 
+    # If it's already populated, there's nothing to do.
     if provinceNumToName != None:
-        return provinceNumToName
+        return
 
-    # Generate the dictionary by parsing POP_FILE
-    pass
+    provinceSet = set()
+
+    # Populate provinceSet by parsing RUNOFF_TURNOUT_FILE
+    with open(RUNOFF_TURNOUT_FILE, 'rU') as csvFile:
+        csvReader = csv.DictReader(csvFile)
+
+        for row in csvReader:
+            provinceSet.add(row['Province'])
+
+    # Sort the list of provinces. Each province's number is just its index
+    # in this sorted list.
+    sortedProvinceList = sorted(list(provinceSet))
+
+    provinceNumToName = dict()
+
+    for i in range(len(sortedProvinceList)):
+        provinceNumToName[i] = sortedProvinceList[i]
+
+    return provinceNumToName
 
 
-# This function returns a dictionary that maps province numbers to their
-# populations.
-def getProvinceNumToPop():
-    global provinceNumToPop
+# This function returns a dictionary that maps province names to their
+# populations. This uses the data in RUNOFF_TURNOUT_FILE.
+#
+def getProvinceNameToPop():
+    # This dict will map from a province's name to its population.
+    provinceNameToPop = dict()
 
-    if provinceNumToPop != None:
-        return provinceNumToPop
+    # Populate provinceNameToPop by parsing RUNOFF_TURNOUT_FILE
+    with open(RUNOFF_TURNOUT_FILE, 'rU') as csvFile:
+        csvReader = csv.DictReader(csvFile)
 
-    pass
+        for row in csvReader:
+            provinceName = row['Province']
+            districtPop = int(row['TotalPopulation'])
+
+            if provinceName in provinceNameToPop:
+                provinceNameToPop[provinceName] += districtPop
+            else:
+                provinceNameToPop[provinceName] = districtPop
+
+    return provinceNameToPop
 
 
 # This function returns a dictionary that maps province numbers to the
 # percent change in turnout percentage, from the first-round election to
 # the runoff election.
+#
 def getProvinceNumToTurnoutChange():
+    # Make sure provinceNumToName is populated.
+    global provinceNumToName
+    populateProvinceNumToName()
 
     pass
 
@@ -121,11 +161,18 @@ def getProvinceNumToTurnoutChange():
 # This function returns a dictionary that maps province numbers to the
 # change in the "observer deployment z-score", from the first-round
 # election to the runoff election.
+#
 def getProvinceNumToObsDepChange():
+    # Make sure provinceNumToName is populated.
+    global provinceNumToName
+    populateProvinceNumToName()
 
     pass
 
 
 # Main code
 if __name__ == "__main__":
-    pass
+    provinceNameToPop = getProvinceNameToPop()
+
+    print provinceNameToPop
+
