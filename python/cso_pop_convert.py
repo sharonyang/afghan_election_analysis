@@ -1,7 +1,8 @@
 # Written by Sharon Yang to convert CSO XLSX file to
 # readable CSV file.
-# Input: 'cso_pop_13_14.csv' (See below for how to get it.)
-# Output: 'cso_pop_fixed.csv' with schema 'province,district,totalVotes'
+# Input: '../raw_data/raw_cso_pop_13_14.csv' (See below for how to get it.)
+# Output: '../clean_data/cso_pop_fixed.csv' with schema 'province,
+#         district, totalVotes'
 
 import re
 
@@ -9,8 +10,8 @@ import re
 # Obtained raw CSO population data from:
 # http://cso.gov.af/en/page/demography-and-socile-statistics/demograph-statistics/3897
 # Delete the top two tables with province overview (no district info)
-# Save as CSV file with filename 'cso_pop_13_14.csv'
-with open('cso_pop_13_14.csv', 'r') as f:
+# Save as CSV file with filename 'raw_cso_pop_13_14.csv' in '../raw_data/'
+with open('../raw_data/raw_cso_pop_13_14.csv', 'r') as f:
   data = f.read()
 
 # Clean up some metadata not needed.
@@ -65,7 +66,7 @@ for dat in range(len(data_set)):
                     output += dist_name + ',' + dist_tot
                     final_product += output + '\n'
 
-# Output file is saved as 'cso_pop_fixed.csv'.
-with open('cso_pop_fixed.csv', 'w') as out:
+# Output file is saved to '../clean_data/cso_pop_fixed.csv'.
+with open('../clean_data/cso_pop_fixed.csv', 'w') as out:
     out.write(final_product)
 

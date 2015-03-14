@@ -1,10 +1,10 @@
 # Written by Sharon Yang to use preliminary turnout data
 # to output districts with "suspicious" voting stations.
-# Input: 'turnout_raw.csv' (See below for how to get it.)
+# Input: '../raw_data/raw_votes.csv' (See below for how to get it.)
 # Output: print out to stdout for districts with "suspicious"
 #         voting stations sorted by highest count to lowest
 #
-# Output: printout to stdout. Stored in "turnout_convert.txt"
+# Output: printout to stdout. Stored in "../clean_data/turnout_convert.txt"
 
 import operator
 
@@ -12,7 +12,7 @@ import operator
 # which is located at https://github.com/developmentseed/aodp-data/tree/runoff
 # The file specifically is at:
 # https://github.com/developmentseed/aodp-data/blob/runoff/data/2014_president_election/results/preliminary-results/2014_afghanistan_preliminary_runoff_election_results.csv
-with open('turnout_raw.csv', 'r') as ff:
+with open('../raw_data/raw_votes.csv', 'r') as ff:
     data = ff.read()
 
 data_set = data.split('\n')
@@ -84,7 +84,7 @@ for d in sorted_dist:
 # Get population data from 2013-2014 CSO data
 # converted by cso_pop_convert.py.
 turnout_dict = {}
-with open('cso_pop_fixed.csv', 'r') as population:
+with open('../clean_data/cso_pop_fixed.csv', 'r') as population:
     pop_data = population.read()
 
 pop_data = pop_data.split('\n')
@@ -135,7 +135,7 @@ for d in sorted_turnout:
     if d[1] - 0.95 > 0:
         print d[0] + ',' + str(output_dict[d[0]][2]) +\
             ',' + str(pop_dict[d[0]]) + ',' + str(d[1] * 100)
- 
+
 print ""
 print "We are missing population from the following districts:"
 print "[<Province,District>,... ]"
