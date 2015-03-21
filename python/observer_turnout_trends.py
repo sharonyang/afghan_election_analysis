@@ -44,6 +44,9 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Import some convenience functions
+from afghan_functions import *
+
 
 # Constants
 
@@ -113,23 +116,7 @@ def populateProvinceNumToName():
     if provinceNumToName != None:
         return
 
-    provinceSet = set()
-
-    # Populate provinceSet by parsing RUNOFF_TURNOUT_FILE
-    with open(RUNOFF_TURNOUT_FILE, 'rU') as csvFile:
-        csvReader = csv.DictReader(csvFile)
-
-        for row in csvReader:
-            provinceSet.add(row['Province'])
-
-    # Sort the list of provinces. Each province's number is just its index
-    # in this sorted list.
-    sortedProvinceList = sorted(list(provinceSet))
-
-    provinceNumToName = dict()
-
-    for i in range(len(sortedProvinceList)):
-        provinceNumToName[i] = sortedProvinceList[i]
+    provinceNumToName = getProvinceNumToName()
 
     return
 
@@ -145,20 +132,7 @@ def populateProvinceNameToPop():
     if provinceNameToPop != None:
         return
 
-    provinceNameToPop = dict()
-
-    # Populate provinceNameToPop by parsing RUNOFF_TURNOUT_FILE
-    with open(RUNOFF_TURNOUT_FILE, 'rU') as csvFile:
-        csvReader = csv.DictReader(csvFile)
-
-        for row in csvReader:
-            provinceName = row['Province']
-            districtPop = int(row['TotalPopulation'])
-
-            if provinceName in provinceNameToPop:
-                provinceNameToPop[provinceName] += districtPop
-            else:
-                provinceNameToPop[provinceName] = districtPop
+    provinceNameToPop = getProvinceNameToPop()
 
     return
 
