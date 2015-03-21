@@ -67,3 +67,34 @@ def getProvinceNameToPop():
 
     return provinceNameToPop
 
+
+# This function returns a dictionary that maps (Province, District) tuples
+# to their populations. This is used to look up the population of a given
+# district (where the "Province" field is used for disambiguation
+# purposes).
+#
+def getProvinceDistrictToPop():
+    provinceDistrictToPop = dict()
+
+    # Populate provinceDistrictToPop by parsing RUNOFF_TURNOUT_FILE
+    with open(RUNOFF_TURNOUT_FILE, 'rU') as csvFile:
+        csvReader = csv.DictReader(csvFile)
+
+        for row in csvReader:
+            provinceName = row['Province']
+            districtName = row['District']
+            districtPop = int(row['TotalPopulation'])
+
+            if (provinceName, districtName) in provinceDistrictToPop:
+                # (Province, District) tuples shouldn't repeat in this
+                # dictionary.
+                raise Exception("Repeated (province, district)" +\
+                        "tuple (" + provinceName + ", " +\
+                        districtName + ") in " +\
+                        RUNOFF_TURNOUT_FILE + "!")
+            else:
+                provinceDistrictToPop[(provinceName, districtName)] = \
+                        districtPop
+
+    return provinceDistrictToPop
+

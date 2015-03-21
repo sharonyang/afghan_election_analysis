@@ -68,8 +68,7 @@ RUNOFF_OBS_DEP_FILE = RAW_DATA_DIR + "raw_observers_runoff.csv"
 # CSV file for first round turnout data (by province).
 FIRST_ROUND_TURNOUT_FILE = RAW_DATA_DIR + "raw_turnout_first_round.csv"
 
-# CSV file for runoff votes and turnout data (by district). This is also
-# what we'll use to get population data.
+# CSV file for runoff votes and turnout data (by district).
 RUNOFF_TURNOUT_FILE = CLEAN_DATA_DIR + "runoff_votes_and_turnout.csv"
 
 # OUTPUT FILES
