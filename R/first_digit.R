@@ -20,10 +20,9 @@ Abdullah_vote_counts <- c(Abdullah_Won$PopulationVoted)
 # Take last digit
 Abdullah_Won_First_Digit <- sapply(Abdullah_vote_counts,
     function(x) substr(x, 1, 1))
-Abdullah_Won_last_1 <- as.data.frame(as.numeric(Abdullah_Won_First_Digit))
+Abdullah_Won_first <- as.data.frame(as.numeric(Abdullah_Won_First_Digit))
 
-votes <- ggplot(Abdullah_Won_last_1, aes(x=Abdullah_Won_First_Digit))
-length(Abdullah_Won_First_Digit)
+votes <- ggplot(Abdullah_Won_first, aes(x=Abdullah_Won_First_Digit))
 
 # Match color according to python/afghan_constants.py
 savefile <- paste("figures/digit_analysis/Abdullah_first_digit.png", sep="")
@@ -37,10 +36,9 @@ Ghani_vote_counts <- c(Ghani_Won$PopulationVoted)
 # Take last digit
 Ghani_Won_First_Digit <- sapply(Ghani_vote_counts,
     function(x) substr(x, 1, 1))
-Ghani_Won_last_1 <- as.data.frame(as.numeric(Ghani_Won_First_Digit))
+Ghani_Won_first <- as.data.frame(as.numeric(Ghani_Won_First_Digit))
 
-votes <- ggplot(Ghani_Won_last_1, aes(x=Ghani_Won_First_Digit))
-length(Ghani_Won_First_Digit)
+votes <- ggplot(Ghani_Won_first, aes(x=Ghani_Won_First_Digit))
 
 # Match color according to python/afghan_constants.py
 savefile <- paste("figures/digit_analysis/Ghani_first_digit.png", sep="")
