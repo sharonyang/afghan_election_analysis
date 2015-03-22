@@ -135,6 +135,8 @@ def getProvinceDistrictToVOverE(candidate):
 # (just the V/E vs T plot with the linear fit) and residPlotSaveFile (for
 # the residual plot).
 #
+# Note that we ignore places with > 200% turnout.
+#
 def plotVOverEVsT(candidate,
                   provinceDistrictToCandidateVOverE,
                   provinceDistrictToTurnout,
@@ -158,8 +160,12 @@ def plotVOverEVsT(candidate,
     yValues = list()
 
     for provinceDistrict in provinceDistrictToCandidateVOverE:
-        xValues.append(provinceDistrictToTurnout[provinceDistrict])
-        yValues.append(provinceDistrictToCandidateVOverE[provinceDistrict])
+        turnout = provinceDistrictToTurnout[provinceDistrict]
+        vOverE = provinceDistrictToCandidateVOverE[provinceDistrict]
+
+        if turnout < 200.0:
+            xValues.append(turnout)
+            yValues.append(vOverE)
 
     xValues = np.array(xValues)
     yValues = np.array(yValues)
@@ -208,7 +214,7 @@ def plotVOverEVsT(candidate,
     plt.xlim([0.0, 200.0])
     plt.ylim([-100.0, 100.0])
     plt.xlabel("Turnout Percentage")
-    plt.ylabel("V/E Residuals")
+    plt.ylabel("Residual V/E")
     plt.title(residPlotTitle)
 
     # Save to file and inform the user.
