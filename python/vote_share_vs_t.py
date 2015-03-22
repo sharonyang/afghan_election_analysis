@@ -3,6 +3,9 @@
 # candidate received in the runoff election as a function of turnout.
 # Individual points in the outputted plots represent districts.
 #
+# Note that districts with > 200% turnout are not included in our fits and
+# graphs.
+#
 # Input files:
 #       * ../clean_data/runoff_votes_and_turnout.csv
 #
@@ -134,6 +137,8 @@ def getProvinceDistrictToVoteShare(candidate):
 # output plots are saved to plotSaveFile (just the vote share vs T plot
 # with the linear fit) and residPlotSaveFile (for the residual plot).
 #
+# Note that we ignore places with > 200% turnout.
+#
 def plotVoteShareVsT(candidate,
                      provinceDistrictToCandidateVoteShare,
                      provinceDistrictToTurnout,
@@ -157,9 +162,12 @@ def plotVoteShareVsT(candidate,
     yValues = list()
 
     for provinceDistrict in provinceDistrictToCandidateVoteShare:
-        xValues.append(provinceDistrictToTurnout[provinceDistrict])
-        yValues.append(\
-                provinceDistrictToCandidateVoteShare[provinceDistrict])
+        turnout = provinceDistrictToTurnout[provinceDistrict]
+        voteShare = provinceDistrictToCandidateVoteShare[provinceDistrict]
+
+        if turnout <= 200.0:
+            xValues.append(turnout)
+            yValues.append(voteShare)
 
     xValues = np.array(xValues)
     yValues = np.array(yValues)
@@ -186,18 +194,18 @@ def plotVoteShareVsT(candidate,
     # Include the fitted line's equation and r^2. Format the equation
     # correctly depending on the intercept's sign.
     if intercept >= 0:
-        plt.text(120.0, 33.0, r"$VS \,= \," + str(slope)[0:6] +\
+        plt.text(115.0, 28.0, r"$VS \,= \," + str(slope)[0:6] +\
                  "T \,+\, " + str(intercept)[0:6] + r"$")
     else:
-        plt.text(120.0, 33.0, r"$VS \,= \," + str(slope)[0:6] +\
+        plt.text(115.0, 28.0, r"$VS \,= \," + str(slope)[0:6] +\
                  "T \,-\, " + str(abs(intercept))[0:6] + r"$")
 
-    plt.text(120.0, 28.0, r"$r^2 = \," + str(rValue**2.0)[0:6] + r"$")
+    plt.text(115.0, 23.0, r"$r^2 = \," + str(rValue**2.0)[0:6] + r"$")
 
     # Save to file and inform the user.
     plt.savefig(plotSaveFile, bbox_inches = "tight")
     plt.close()
-    print "Saved vote share vs T plot for", candidate, "to\n", plotSaveFile
+    print "Saved VS vs T plot for", candidate, "to\n", plotSaveFile
 
     # Plot the residual plot, with a flat line at y = 0 for reference.
     fig = plt.figure()
@@ -213,7 +221,7 @@ def plotVoteShareVsT(candidate,
     # Save to file and inform the user.
     plt.savefig(residPlotSaveFile, bbox_inches = "tight")
     plt.close()
-    print "Saved vote share vs T residual plot for", candidate, "to\n",\
+    print "Saved VS vs T residual plot for", candidate, "to\n",\
             residPlotSaveFile, "\n"
 
 
@@ -232,8 +240,8 @@ if __name__ == "__main__":
     plotVoteShareVsT("Abdullah",
                      provinceDistrictToAbdullahVoteShare,
                      provinceDistrictToTurnout,
-                     "Vote Share vs T for Abdullah",
-                     "Vote Share vs T Residuals for Abdullah",
+                     "VS vs T for Abdullah",
+                     "VS vs T Residuals for Abdullah",
                      ABDULLAH_COLOR,
                      ABDULLAH_VOTE_SHARE_VS_T,
                      ABDULLAH_VOTE_SHARE_VS_T_RESID)
@@ -241,8 +249,8 @@ if __name__ == "__main__":
     plotVoteShareVsT("Ghani",
                      provinceDistrictToGhaniVoteShare,
                      provinceDistrictToTurnout,
-                     "Vote Share vs T for Ghani",
-                     "Vote Share vs T Residuals for Ghani",
+                     "VS vs T for Ghani",
+                     "VS vs T Residuals for Ghani",
                      GHANI_COLOR,
                      GHANI_VOTE_SHARE_VS_T,
                      GHANI_VOTE_SHARE_VS_T_RESID)
