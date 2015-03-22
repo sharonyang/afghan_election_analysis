@@ -1,13 +1,14 @@
 # Run this plot in base directory (afghan_election_analysis)
-# Do: Rscript R/first_digit.R
-# Output will be in figures/digit_analysis/<winner>_first_digit.png
+# Do: Rscript R/benford.R
+# Output will be in figures/digit_analysis/<winner>_benford.png
 # Get ggplot2 library on Linux by
 # sudo apt-get install r-cran-ggplot2
+
+require(ggplot2)
 
 # Read data.
 dat1 <- read.csv("clean_data/first_digit_abdullah.csv", header=TRUE)
 
-require(ggplot2)
 plot_abdullah <- ggplot(data=dat1, aes(x=Digit, y=Count, fill=Type)) +
     geom_bar(bins=100, stat="identity",
         position=position_dodge(), colour="black")
