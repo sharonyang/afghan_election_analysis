@@ -208,7 +208,7 @@ def plotVOverEVsT(candidate,
     plt.xlim([0.0, 200.0])
     plt.ylim([-100.0, 100.0])
     plt.xlabel("Turnout Percentage")
-    plt.ylabel("Residual V/E")
+    plt.ylabel("V/E Residuals")
     plt.title(residPlotTitle)
 
     # Save to file and inform the user.
