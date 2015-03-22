@@ -2,10 +2,10 @@
 # Description: This script tries to see if provinces where Ghani won by a
 # lot (in the runoff election) also happen to be places with relatively
 # high turnout. If this is the case, then this suggests that Ghani engaged
-# in country-wide vote-stuffing in order to win. If this isn't the case,
-# then we can't really say much; for all we know, Abdullah might also be
-# engaging in vote stuffing, and this wouldn't show up in a winning margin
-# analysis.
+# in country-wide vote-stuffing in order to win, and that Abdullah did not
+# engage in as much vote stuffing or fraud. If this isn't the case, then we
+# can't really say much; for all we know, Abdullah might also be engaging
+# in vote stuffing, and this wouldn't show up in a winning margin analysis.
 #
 # Winning margin analysis (WMA) is conducted on a province level with
 # histograms, and a district level with scatterplots (sort of like observer

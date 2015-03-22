@@ -84,7 +84,7 @@ def populateProvinceDistrictToPop():
 # percentage in the returned dictionary.
 #
 def getProvinceDistrictToVOverE(candidate):
-    if candidate is not "Abdullah" and candidate is not "Ghani":
+    if candidate != "Abdullah" and candidate != "Ghani":
         raise ValueError("The input candidate " + candidate + " was " +\
                 "neither Abdullah nor Ghani!")
 
@@ -94,7 +94,7 @@ def getProvinceDistrictToVOverE(candidate):
     # Set the column to look at in the CSV.
     voteColumn = "GhaniVotes"
 
-    if candidate is "Abdullah":
+    if candidate == "Abdullah":
         voteColumn = "AbdullahVotes"
 
     # Go through RUNOFF_VOTES_FILE, add up all of the votes for the
@@ -146,7 +146,7 @@ def plotVOverEVsT(candidate,
                   plotSaveFile,
                   residPlotSaveFile):
 
-    if candidate is not "Abdullah" and candidate is not "Ghani":
+    if candidate != "Abdullah" and candidate != "Ghani":
         raise ValueError("The input candidate " + candidate + " was " +\
                 "neither Abdullah nor Ghani!")
 
