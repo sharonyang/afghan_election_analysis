@@ -15,22 +15,22 @@
 #       * ../clean_data/runoff_votes_and_turnout.csv
 #
 # Outputs:
-#       * ../clean_data/turnout_change.png - This is a bar graph showing
+#       * ../figures/turnout_change.png - This is a bar graph showing
 #         the percent change in turnout in each province between the two
 #         elections. On the x-axis, each province is just assigned a
 #         number.
-#       * ../clean_data/obs_dep_change.png - This is a bar graph that shows
+#       * ../figures/obs_dep_change.png - This is a bar graph that shows
 #         the percent change in the *relative* observer deployment density
 #         between the two elections, for each province. The "relative" part
 #         means we're subtracting off the median observer deployment
 #         density change across all provinces (where the change is measured
 #         between the two elections).
-#       * ../clean_data/obs_dep_turnout_change.png - A combination of the
+#       * ../figures/obs_dep_turnout_change.png - A combination of the
 #         above two graphs, on the same set of axes.
 #       * ../clean_data/num_to_province.csv - A CSV file that describes the
 #         mapping between numbers (used in the above graphs) and actual
 #         province names.
-#       * ../clean_data/runoff_turnout_vs_norm_obs_dep.png - A scatterplot
+#       * ../figures/runoff_turnout_vs_norm_obs_dep.png - A scatterplot
 #         of the turnout percentages in various provinces, as a function of
 #         their "normalized observer deployment density (see below for a
 #         definition of this).
@@ -56,6 +56,7 @@ from afghan_constants import VOTING_FRACTION
 # DIRECTORIES
 RAW_DATA_DIR = "../raw_data/"
 CLEAN_DATA_DIR = "../clean_data/"
+FIGURE_DIR = "../figures/"
 
 # INPUT FILES
 
@@ -74,19 +75,19 @@ RUNOFF_TURNOUT_FILE = CLEAN_DATA_DIR + "runoff_votes_and_turnout.csv"
 # OUTPUT FILES
 
 # Bar graph for percent change in turnout vs province number
-BAR_GRAPH_TURNOUT_CHANGE = CLEAN_DATA_DIR + "turnout_change.png"
+BAR_GRAPH_TURNOUT_CHANGE = FIGURE_DIR + "turnout_change.png"
 
 # Bar graph for percent change in observer deployment density vs province
 # number.
-BAR_GRAPH_OBS_DEP_CHANGE = CLEAN_DATA_DIR + "obs_dep_change.png"
+BAR_GRAPH_OBS_DEP_CHANGE = FIGURE_DIR + "obs_dep_change.png"
 
 # Bar graph combining the above two bar graphs on the same axes.
-BAR_GRAPH_TURNOUT_OBS_DEP_CHANGE = CLEAN_DATA_DIR +\
+BAR_GRAPH_TURNOUT_OBS_DEP_CHANGE = FIGURE_DIR +\
         "obs_dep_turnout_change.png"
 
 # Scatterplot of the runoff turnout percentage in various provinces as a
 # function of the "normalized observer deployment density".
-SCATTER_TURNOUT_NORM_OBS_DEP = CLEAN_DATA_DIR +\
+SCATTER_TURNOUT_NORM_OBS_DEP = FIGURE_DIR +\
         "runoff_turnout_vs_norm_obs_dep.png"
 
 # CSV file describing the mapping from numbers to actual province names.
@@ -527,6 +528,7 @@ if __name__ == "__main__":
 
     # Output province num to province name dictionary
     csvWriter = csv.writer(open(NUM_TO_PROV_FILE, "w"))
+    csvWriter.writerow(["ProvinceNum", "ProvinceName"])
 
     for key, val in provinceNumToName.items():
         csvWriter.writerow([key, val])
