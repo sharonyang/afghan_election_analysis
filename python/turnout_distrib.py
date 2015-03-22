@@ -11,16 +11,18 @@
 #       * ../clean_data/runoff_votes_and_turnout.csv
 #
 # Outputs:
-#       * ../figures/first_round_turnout_distrib_entire.png - The first
-#         round turnout distribution, covering the entire data range (the
-#         data goes up to like 1000%).
-#       * ../figures/first_round_turnout_distrib_restricted.png - The
-#         first round turnout distribution, but over a restricted range of
-#         turnout percentages (e.g. 0% to 100%).
-#       * ../figures/runoff_turnout_distrib_entire.png - The runoff
-#         turnout distribution, over the entire data range.
-#       * ../figures/runoff_turnout_distrib_restricted.png - The runoff
-#         turnout distribution, but over a restricted range.
+#       * ../figures/turnout_distribs/first_round_turnout_distrib_
+#         entire.png - The first round turnout distribution, covering the
+#         entire data range (the data goes up to like 1000%).
+#       * ../figures/turnout_distribs/first_round_turnout_distrib_
+#         restricted.png - The first round turnout distribution, but over a
+#         restricted range of turnout percentages (e.g. 0% to 100%).
+#       * ../figures/turnout_distribs/runoff_turnout_distrib_
+#         entire.png - The runoff turnout distribution, over the entire
+#         data range.
+#       * ../figures/turnout_distribs/runoff_turnout_distrib_
+#         restricted.png - The runoff turnout distribution, but over a
+#         restricted range.
 #       * ../clean_data/high_turnout.csv - A CSV file containing districts
 #         with >= 100.0% turnout in the runoff election.
 #
@@ -28,10 +30,10 @@
 import csv
 import numpy as np
 import matplotlib.pyplot as plt
+from operator import itemgetter
 
 # Import convenience functions
 from afghan_functions import *
-from operator import itemgetter
 
 
 # Constants
@@ -40,9 +42,8 @@ from operator import itemgetter
 from afghan_constants import VOTING_FRACTION
 
 # DIRECTORIES
-RAW_DATA_DIR = "../raw_data/"
 CLEAN_DATA_DIR = "../clean_data/"
-FIGURE_DIR = "../figures/"
+FIGURE_DIR = "../figures/turnout_distribs/"
 
 # INPUT FILES
 

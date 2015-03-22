@@ -15,25 +15,25 @@
 #       * ../clean_data/runoff_votes_and_turnout.csv
 #
 # Outputs:
-#       * ../figures/turnout_change.png - This is a bar graph showing
-#         the percent change in turnout in each province between the two
-#         elections. On the x-axis, each province is just assigned a
-#         number.
-#       * ../figures/obs_dep_change.png - This is a bar graph that shows
-#         the percent change in the *relative* observer deployment density
-#         between the two elections, for each province. The "relative" part
-#         means we're subtracting off the median observer deployment
-#         density change across all provinces (where the change is measured
-#         between the two elections).
-#       * ../figures/obs_dep_turnout_change.png - A combination of the
-#         above two graphs, on the same set of axes.
+#       * ../figures/observer_dep_and_turnout/turnout_change.png - This is
+#         a bar graph showing the percent change in turnout in each
+#         province between the two elections. On the x-axis, each province
+#         is just assigned a number.
+#       * ../figures/observer_dep_and_turnout/obs_dep_change.png - This is
+#         a bar graph that shows the percent change in the *relative*
+#         observer deployment density between the two elections, for each
+#         province. The "relative" part means we're subtracting off the
+#         median observer deployment density change across all provinces
+#         (where the change is measured between the two elections).
+#       * ../figures/observer_dep_and_turnout/obs_dep_turnout_change.png -
+#         A combination of the above two graphs, on the same set of axes.
 #       * ../clean_data/num_to_province.csv - A CSV file that describes the
 #         mapping between numbers (used in the above graphs) and actual
 #         province names.
-#       * ../figures/runoff_turnout_vs_norm_obs_dep.png - A scatterplot
-#         of the turnout percentages in various provinces, as a function of
-#         their "normalized observer deployment density (see below for a
-#         definition of this).
+#       * ../figures/observer_dep_and_turnout/runoff_turnout_vs_norm_obs_
+#         dep.png - A scatterplot of the turnout percentages in various
+#         provinces, as a function of their "normalized observer deployment
+#         density (see below for a definition of this).
 #
 # Precondition: there are 34 provinces, and it is essential that their
 # names match across all of the input CSV files!
@@ -56,7 +56,7 @@ from afghan_constants import VOTING_FRACTION
 # DIRECTORIES
 RAW_DATA_DIR = "../raw_data/"
 CLEAN_DATA_DIR = "../clean_data/"
-FIGURE_DIR = "../figures/"
+FIGURE_DIR = "../figures/observer_dep_and_turnout/"
 
 # INPUT FILES
 
