@@ -7,7 +7,7 @@
 # election).
 #
 # Inputs:
-#       * ../raw_data/raw_votes_first_round.csv
+#       * ../clean_data/first_round_votes.csv
 #       * ../clean_data/runoff_votes_and_turnout.csv
 #
 # Outputs:
@@ -47,7 +47,7 @@ FIGURE_DIR = "../figures/"
 # INPUT FILES
 
 # CSV file for first round votes (by polling station)
-FIRST_ROUND_VOTES_FILE = RAW_DATA_DIR + "raw_votes_first_round.csv"
+FIRST_ROUND_VOTES_FILE = CLEAN_DATA_DIR + "first_round_votes.csv"
 
 # CSV file for runoff votes (by district).
 RUNOFF_VOTES_FILE = CLEAN_DATA_DIR + "runoff_votes_and_turnout.csv"
