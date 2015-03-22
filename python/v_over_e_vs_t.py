@@ -31,7 +31,7 @@ from turnout_distrib import getProvinceDistrictToRunoffTurnout
 # Constants
 
 # VALUES
-from afghan_constants import VOTING_FRACTION
+from afghan_constants import VOTING_FRACTION, ABDULLAH_COLOR, GHANI_COLOR
 
 # DIRECTORIES
 CLEAN_DATA_DIR = "../clean_data/"
@@ -234,7 +234,7 @@ if __name__ == "__main__":
                   provinceDistrictToTurnout,
                   "V/E vs T for Abdullah",
                   "V/E vs T Residuals for Abdullah",
-                  "#FFAE19",
+                  ABDULLAH_COLOR,
                   ABDULLAH_V_OVER_E_VS_T,
                   ABDULLAH_V_OVER_E_VS_T_RESID)
 
@@ -243,7 +243,7 @@ if __name__ == "__main__":
                   provinceDistrictToTurnout,
                   "V/E vs T for Ghani",
                   "V/E vs T Residuals for Ghani",
-                  "#72AFE4",
+                  GHANI_COLOR,
                   GHANI_V_OVER_E_VS_T,
                   GHANI_V_OVER_E_VS_T_RESID)
 

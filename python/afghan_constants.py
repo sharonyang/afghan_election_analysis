@@ -13,3 +13,7 @@ AFGHAN_POPULATION = 31822848.0
 # This homogeneity assumption might not always hold, but it's the best we
 # can do.
 VOTING_FRACTION = NUM_REGISTERED_VOTERS/float(AFGHAN_POPULATION)
+
+# Colors to use for the two candidates' plots.
+ABDULLAH_COLOR = "#FFAE19"
+GHANI_COLOR = "#72AFE4"
