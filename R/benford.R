@@ -24,7 +24,7 @@ print(plot_abdullah + scale_x_continuous(breaks=c(1,2,3,4,5,6,7,8,9)) +
 # Read data.
 dat2 <- read.csv("clean_data/first_digit_ghani.csv", header=TRUE)
 
-plot_ghani <- ggplot(data=dat1, aes(x=Digit, y=Count, fill=Type)) +
+plot_ghani <- ggplot(data=dat2, aes(x=Digit, y=Count, fill=Type)) +
     geom_bar(bins=100, stat="identity",
         position=position_dodge(), colour="black")
 
