@@ -3,20 +3,16 @@
 # Output will be shown in terminal.
 
 #     Pearson's Chi-squared test
-# 
-# data:  abdullah
-# X-squared = 18.8415, df = 8, p-value = 0.01573
 
-# Warning message:
-# In chisq.test(abdullah) : Chi-squared approximation may be incorrect
+# data:  abdullah
+# X-squared = 8.6113, df = 8, p-value = 0.3761
+
 
 #     Pearson's Chi-squared test
 
 # data:  ghani
-# X-squared = 31.4226, df = 8, p-value = 0.0001181
+# X-squared = 5.2783, df = 8, p-value = 0.7275
 
-# Warning message:
-# In chisq.test(ghani) : Chi-squared approximation may be incorrect
 
 require(MASS)
 

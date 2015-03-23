@@ -4,11 +4,24 @@
 # Get ggplot2 library on Linux by
 # sudo apt-get install r-cran-ggplot2
 
+#     Pearson's Chi-squared test
+# 
+# data:  abdullah
+# X-squared = 4.7326, df = 9, p-value = 0.857
+
+
+#     Pearson's Chi-squared test
+
+# data:  ghani
+# X-squared = 1.9329, df = 9, p-value = 0.9925
+
+
 # Read data.
 results <- read.csv("clean_data/runoff_votes_and_turnout.csv", header=TRUE)
 
 # Set plot output destination.
 require(ggplot2)
+require(MASS)
 
 # Get districts where Abdullah/Ghani won.
 Abdullah_Won <- results[results[, 3] > results[, 4], ]
@@ -43,3 +56,21 @@ votes <- ggplot(Ghani_Won_last_1, aes(x=Ghani_Won_Last_Digit))
 savefile <- paste("figures/digit_analysis/Ghani_last_digit.png", sep="")
 png(file=savefile, width=600)
 print(votes + geom_histogram(bins=100, fill="#72AFE4"))
+
+# Abdullah's data for chi-squared analysis
+abdullah_p <- as.data.frame(table(Abdullah_Won_last_1))$Freq
+total <- length(Abdullah_vote_counts) / 10
+abdullah_t <- c(total, total, total, total, total, total, total,
+    total, total, total)
+
+abdullah = as.data.frame(rbind(abdullah_p, abdullah_t))
+chisq.test(abdullah)
+
+# Ghani's data for chi-squared analysis
+ghani_p <- as.data.frame(table(Ghani_Won_last_1))$Freq
+total <- length(Ghani_vote_counts) / 10
+ghani_t <- c(total, total, total, total, total, total, total,
+    total, total, total)
+
+ghani = as.data.frame(rbind(ghani_p, ghani_t))
+chisq.test(ghani)

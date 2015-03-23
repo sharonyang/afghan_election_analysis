@@ -28,7 +28,7 @@ votes <- ggplot(Abdullah_Won_first, aes(x=Abdullah_Won_First_Digit))
 savefile <- paste("figures/digit_analysis/Abdullah_first_digit.png", sep="")
 png(file=savefile, width=600)
 print(votes + geom_histogram(bins=100, fill="#FFAE19"))
-
+length(Abdullah_Won_First_Digit)
 
 # Start plotting Ghani's data.
 Ghani_vote_counts <- c(Ghani_Won$PopulationVoted)
@@ -37,7 +37,7 @@ Ghani_vote_counts <- c(Ghani_Won$PopulationVoted)
 Ghani_Won_First_Digit <- sapply(Ghani_vote_counts,
     function(x) substr(x, 1, 1))
 Ghani_Won_first <- as.data.frame(as.numeric(Ghani_Won_First_Digit))
-
+length(Ghani_Won_First_Digit)
 votes <- ggplot(Ghani_Won_first, aes(x=Ghani_Won_First_Digit))
 
 # Match color according to python/afghan_constants.py
