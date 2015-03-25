@@ -37,7 +37,9 @@ votes <- ggplot(Abdullah_Won_last_1, aes(x=Abdullah_Won_Last_Digit))
 # Match color according to python/afghan_constants.py
 savefile <- paste("figures/digit_analysis/Abdullah_last_digit.png", sep="")
 png(file=savefile, width = 600)
-print(votes + geom_histogram(bins=100, fill="#FFAE19"))
+print(votes + geom_histogram(bins=100, fill="#FFAE19") +
+    ggtitle("Last-Digit Analysis for Abdullah's Votes in All Districts") +
+    labs(x="Least Significant Digit", y="Count"))
 
 # Start plotting Ghani's data.
 Ghani_vote_counts <- c(results$GhaniVotes)
@@ -52,7 +54,9 @@ votes <- ggplot(Ghani_Won_last_1, aes(x=Ghani_Won_Last_Digit))
 # Match color according to python/afghan_constants.py
 savefile <- paste("figures/digit_analysis/Ghani_last_digit.png", sep="")
 png(file=savefile, width=600)
-print(votes + geom_histogram(bins=100, fill="#72AFE4"))
+print(votes + geom_histogram(bins=100, fill="#72AFE4") + 
+    ggtitle("Last-Digit Analysis for Ghani's Votes in All Districts") +
+    labs(x="Least Significant Digit", y="Count"))
 
 # Abdullah's data for chi-squared analysis
 abdullah_p <- as.data.frame(table(Abdullah_Won_last_1))$Freq
