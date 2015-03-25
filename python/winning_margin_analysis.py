@@ -273,6 +273,7 @@ if __name__ == "__main__":
 
     plt.scatter(xValues, yValues, s = 20, color = 'k')
     plt.xlim([0.0, 200.0])
+    plt.ylim([-100.0, 100.0])
     plt.xlabel("Turnout Percentage")
     plt.ylabel("Ghani's Winning Margin")
     plt.title("District-Level Ghani Winning Margin Analysis")
