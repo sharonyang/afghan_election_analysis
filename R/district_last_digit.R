@@ -35,7 +35,7 @@ Abdullah_Won_last_1 <- as.data.frame(as.numeric(Abdullah_Won_Last_Digit))
 votes <- ggplot(Abdullah_Won_last_1, aes(x=Abdullah_Won_Last_Digit))
 
 # Match color according to python/afghan_constants.py
-savefile <- paste("figures/digit_analysis/Abdullah_last_digit.png", sep="")
+savefile <- paste("figures/digit_analysis/Abdullah_last_digit_district.png", sep="")
 png(file=savefile, width = 600)
 print(votes + geom_histogram(bins=100, fill="#FFAE19") +
     ggtitle("Last-Digit Analysis for Abdullah's Votes in All Districts") +
@@ -52,7 +52,7 @@ Ghani_Won_last_1 <- as.data.frame(as.numeric(Ghani_Won_Last_Digit))
 votes <- ggplot(Ghani_Won_last_1, aes(x=Ghani_Won_Last_Digit))
 
 # Match color according to python/afghan_constants.py
-savefile <- paste("figures/digit_analysis/Ghani_last_digit.png", sep="")
+savefile <- paste("figures/digit_analysis/Ghani_last_digit_district.png", sep="")
 png(file=savefile, width=600)
 print(votes + geom_histogram(bins=100, fill="#72AFE4") + 
     ggtitle("Last-Digit Analysis for Ghani's Votes in All Districts") +
