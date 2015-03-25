@@ -2,16 +2,15 @@
 # Do: Rscript R/benford_pval.R
 # Output will be shown in terminal.
 
-#     Pearson's Chi-squared test
+# 	Pearson's Chi-squared test
 
 # data:  abdullah
-# X-squared = 8.6113, df = 8, p-value = 0.3761
+# -squared = 8.1468, df = 8, p-value = 0.4193
 
-
-#     Pearson's Chi-squared test
+# 	Pearson's Chi-squared test
 
 # data:  ghani
-# X-squared = 5.2783, df = 8, p-value = 0.7275
+# X-squared = 2.0575, df = 8, p-value = 0.9792
 
 
 require(MASS)

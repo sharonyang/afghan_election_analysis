@@ -5,15 +5,16 @@
 # sudo apt-get install r-cran-ggplot2
 
 #     Pearson's Chi-squared test
-# 
+
 # data:  abdullah
-# X-squared = 4.7326, df = 9, p-value = 0.857
+# X-squared = 7.2676, df = 9, p-value = 0.6093
 
 
 #     Pearson's Chi-squared test
 
 # data:  ghani
-# X-squared = 1.9329, df = 9, p-value = 0.9925
+# X-squared = 5.9023, df = 9, p-value = 0.7497
+
 
 
 # Read data.
@@ -23,12 +24,8 @@ results <- read.csv("clean_data/runoff_votes_and_turnout.csv", header=TRUE)
 require(ggplot2)
 require(MASS)
 
-# Get districts where Abdullah/Ghani won.
-Abdullah_Won <- results[results[, 3] > results[, 4], ]
-Ghani_Won <- results[results[, 3] < results[, 4], ]
-
 # Start plotting Abdullah's data.
-Abdullah_vote_counts <- c(Abdullah_Won$PopulationVoted)
+Abdullah_vote_counts <- c(results$AbdullahVotes)
 
 # Take last digit
 Abdullah_Won_Last_Digit <- sapply(Abdullah_vote_counts,
@@ -43,7 +40,7 @@ png(file=savefile, width = 600)
 print(votes + geom_histogram(bins=100, fill="#FFAE19"))
 
 # Start plotting Ghani's data.
-Ghani_vote_counts <- c(Ghani_Won$PopulationVoted)
+Ghani_vote_counts <- c(results$GhaniVotes)
 
 # Take last digit
 Ghani_Won_Last_Digit <- sapply(Ghani_vote_counts,
