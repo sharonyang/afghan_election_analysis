@@ -2,7 +2,7 @@
 # Description: This script takes two arguments: a candidate's last name,
 # and a province's name. It then creates a histogram of the vote share
 # distribution for that candidate in that province. This is created by
-# looking at all of the polling centers for that province and seeing how
+# looking at all of the polling stations for that province and seeing how
 # many of the total votes were won by the given candidate.
 #
 # Command-line arguments (in this order):
