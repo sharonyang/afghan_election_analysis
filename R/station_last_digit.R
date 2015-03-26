@@ -46,7 +46,7 @@ votes <- ggplot(last_1, aes(x=last_one))
 savefile <- paste("figures/digit_analysis/Ghani_last_digit_polling_stations.png", sep="")
 png(file=savefile, width = 600)
 print(votes + geom_histogram(bins=100, fill="#72AFE4") +
-    ggtitle("Last-Digit Analysis for Ghani's Votes in All Polling Stations") +
+    ggtitle("Last-Digit Analysis for Ghani's Votes in in Ghani-Won Polling Stations") +
     labs(x="Least Significant Digit", y="Count"))
 
 total <- length(last_one) / 10
@@ -72,7 +72,7 @@ votes <- ggplot(last_1, aes(x=last_one))
 savefile <- paste("figures/digit_analysis/Abdullah_last_digit_polling_stations.png", sep="")
 png(file=savefile, width = 600)
 print(votes + geom_histogram(bins=100, fill="#FFAE19") +
-    ggtitle("Last-Digit Analysis for Abdullah's Votes in All Polling Stations") +
+    ggtitle("Last-Digit Analysis for Abdullah's Votes in Abdullah-Won Polling Stations") +
     labs(x="Least Significant Digit", y="Count"))
 
 total <- length(last_one) / 10
