@@ -7,15 +7,18 @@
 # 	Pearson's Chi-squared test
 
 # data:  ghani
-# X-squared = 90.1215, df = 9, p-value = 1.539e-15
+# X-squared = 87.8034, df = 9, p-value = 4.487e-15
 
-#  [1] 2875 2151 2181 2195 2158 2217 2124 2209 2238 2121
-#  [1] 2246.9 2246.9 2246.9 2246.9 2246.9 2246.9 2246.9 2246.9 2246.9 2246.9
+#  [1] 1619 1050 1119 1140 1073 1178 1106 1182 1198 1121
+#  [1] 1178.6 1178.6 1178.6 1178.6 1178.6 1178.6 1178.6 1178.6 1178.6 1178.6
 
 # 	Pearson's Chi-squared test
 
 # data:  abdullah
-# X-squared = 160.0029, df = 9, p-value < 2.2e-16
+# X-squared = 6.0607, df = 9, p-value = 0.7338
+
+#  [1] 1155 1023 1048 1071 1042 1046 1061 1051 1073 1018
+#  [1] 1058.8 1058.8 1058.8 1058.8 1058.8 1058.8 1058.8 1058.8 1058.8 1058.8
 
 
 require(MASS)
@@ -23,16 +26,21 @@ require(ggplot2)
 
 ## read data
 results <- read.csv("raw_data/raw_votes_runoff.csv", header=TRUE)
-## combine counts for both candidates
-vote_counts <- c(results$"Ghani")
-## remove counts under 100
-vote_counts_filter <- vote_counts[vote_counts > 9 && vote_counts < 600]
 
-## take last two digits; no need to add leading zero because all numbers are three digits
+# Get districts won by each candidates.
+Abdullah_Won <- results[results[, 5] > results[, 6], ]
+Ghani_Won <- results[results[, 5] < results[, 6], ]
+
+Abdullah_Won <- Abdullah_Won$"Abdullah"
+Ghani_Won <- Ghani_Won$"Ghani"
+
+## remove counts under 10 and above 600
+vote_counts_filter <- Ghani_Won[Ghani_Won > 9 && Ghani_Won < 600]
+
+## take last digit; no need to add leading zero because all numbers are three digits
 last_one <- sapply(vote_counts_filter, function(x) substr(x, nchar(x)  , nchar(x)))
 last_1 <- as.data.frame(as.numeric(last_one))
 
-## plot, actually done with d3.js in browser
 votes <- ggplot(last_1, aes(x=last_one))
 
 savefile <- paste("figures/digit_analysis/Ghani_last_digit_polling_stations.png", sep="")
@@ -52,13 +60,12 @@ curr_t
 
 ## combine counts for both candidates
 vote_counts <- c(results$"Abdullah")
-## remove counts under 100
-vote_counts_filter <- vote_counts[vote_counts > 9 && vote_counts < 600]
+## remove counts under 10 and above 600
+vote_counts_filter <- Abdullah_Won[Abdullah_Won > 9 && Abdullah_Won < 600]
 
-## take last two digits; no need to add leading zero because all numbers are three digits
+## take last digit; no need to add leading zero because all numbers are three digits
 last_one <- sapply(vote_counts_filter, function(x) substr(x, nchar(x)  , nchar(x)))
 last_1 <- as.data.frame(as.numeric(last_one))
-## plot, actually done with d3.js in browser
 votes <- ggplot(last_1, aes(x=last_one))
 
 # Match color according to python/afghan_constants.py

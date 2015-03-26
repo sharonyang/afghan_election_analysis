@@ -10,10 +10,14 @@ results <- read.csv("clean_data/runoff_votes_and_turnout.csv", header=TRUE)
 # Set plot output destination.
 require(ggplot2)
 
-# Start plotting Abdullah's data.
-Abdullah_vote_counts <- c(results$AbdullahVotes)
+# Get districts won by each candidates.
+Abdullah_Won <- results[results[, 3] > results[, 4], ]
+Ghani_Won <- results[results[, 3] < results[, 4], ]
 
-# Take last digit
+# Start plotting Abdullah's data.
+Abdullah_vote_counts <- c(Abdullah_Won$AbdullahVotes)
+
+# Take first digit.
 Abdullah_Won_First_Digit <- sapply(Abdullah_vote_counts,
     function(x) substr(x, 1, 1))
 Abdullah_Won_first <- as.data.frame(as.numeric(Abdullah_Won_First_Digit))
@@ -28,9 +32,9 @@ table(Abdullah_Won_first)
 length(Abdullah_Won_First_Digit)
 
 # Start plotting Ghani's data.
-Ghani_vote_counts <- c(results$GhaniVotes)
+Ghani_vote_counts <- c(Ghani_Won$GhaniVotes)
 
-# Take last digit
+# Take first digit.
 Ghani_Won_First_Digit <- sapply(Ghani_vote_counts,
     function(x) substr(x, 1, 1))
 Ghani_Won_first <- as.data.frame(as.numeric(Ghani_Won_First_Digit))

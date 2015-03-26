@@ -24,8 +24,11 @@ results <- read.csv("clean_data/runoff_votes_and_turnout.csv", header=TRUE)
 require(ggplot2)
 require(MASS)
 
+Abdullah_Won <- results[results[, 3] > results[, 4], ]
+Ghani_Won <- results[results[, 3] < results[, 4], ]
+
 # Start plotting Abdullah's data.
-Abdullah_vote_counts <- c(results$AbdullahVotes)
+Abdullah_vote_counts <- c(Abdullah_Won$AbdullahVotes)
 
 # Take last digit
 Abdullah_Won_Last_Digit <- sapply(Abdullah_vote_counts,
@@ -38,11 +41,11 @@ votes <- ggplot(Abdullah_Won_last_1, aes(x=Abdullah_Won_Last_Digit))
 savefile <- paste("figures/digit_analysis/Abdullah_last_digit_district.png", sep="")
 png(file=savefile, width = 600)
 print(votes + geom_histogram(bins=100, fill="#FFAE19") +
-    ggtitle("Last-Digit Analysis for Abdullah's Votes in All Districts") +
+    ggtitle("Last-Digit Analysis for Abdullah's Votes in Abdullah-Won Districts") +
     labs(x="Least Significant Digit", y="Count"))
 
 # Start plotting Ghani's data.
-Ghani_vote_counts <- c(results$GhaniVotes)
+Ghani_vote_counts <- c(Ghani_Won$GhaniVotes)
 
 # Take last digit
 Ghani_Won_Last_Digit <- sapply(Ghani_vote_counts,
@@ -55,7 +58,7 @@ votes <- ggplot(Ghani_Won_last_1, aes(x=Ghani_Won_Last_Digit))
 savefile <- paste("figures/digit_analysis/Ghani_last_digit_district.png", sep="")
 png(file=savefile, width=600)
 print(votes + geom_histogram(bins=100, fill="#72AFE4") + 
-    ggtitle("Last-Digit Analysis for Ghani's Votes in All Districts") +
+    ggtitle("Last-Digit Analysis for Ghani's Votes in Ghani-Won Districts") +
     labs(x="Least Significant Digit", y="Count"))
 
 # Abdullah's data for chi-squared analysis

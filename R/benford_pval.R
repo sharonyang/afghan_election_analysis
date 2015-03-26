@@ -5,12 +5,14 @@
 # 	Pearson's Chi-squared test
 
 # data:  abdullah
-# -squared = 8.1468, df = 8, p-value = 0.4193
+# X-squared = 17.6933, df = 8, p-value = 0.02365
+
 
 # 	Pearson's Chi-squared test
 
 # data:  ghani
-# X-squared = 2.0575, df = 8, p-value = 0.9792
+# X-squared = 2.6132, df = 8, p-value = 0.9562
+
 
 
 require(MASS)

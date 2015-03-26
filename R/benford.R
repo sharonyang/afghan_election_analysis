@@ -17,7 +17,7 @@ plot_abdullah <- ggplot(data=dat1, aes(x=Digit, y=Count, fill=Type)) +
 savefile <- paste("figures/digit_analysis/Abdullah_benford.png", sep="")
 png(file=savefile, width=600)
 print(plot_abdullah + scale_x_continuous(breaks=c(1,2,3,4,5,6,7,8,9)) +
-    ggtitle("Benford Analysis for Abdullah's Votes in All Districts") +
+    ggtitle("Benford Analysis for Abdullah's Votes in Abdullah-Won Districts") +
     scale_fill_manual("Count Type", values = c("#FFAE19", "gray")) +
     labs(x="Most Significant Digit"))
 
@@ -32,6 +32,6 @@ plot_ghani <- ggplot(data=dat2, aes(x=Digit, y=Count, fill=Type)) +
 savefile <- paste("figures/digit_analysis/Ghani_benford.png", sep="")
 png(file=savefile, width=600)
 print(plot_ghani + scale_x_continuous(breaks=c(1,2,3,4,5,6,7,8,9)) +
-    ggtitle("Benford Analysis for Ghani's Votes in All Districts") +
+    ggtitle("Benford Analysis for Ghani's Votes in Ghani-Won Districts") +
     scale_fill_manual("Count Type", values = c("#72AFE4", "gray")) +
     labs(x="Most Significant Digit"))
