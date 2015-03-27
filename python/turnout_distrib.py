@@ -295,7 +295,7 @@ if __name__ == "__main__":
     plt.xlabel("Turnout Percentage")
     plt.ylabel("Number of Districts")
     plt.xlim([0.0, 100.0])
-    plt.title("Runoff Election Turnout Distribution (Restricted)")
+    plt.title("Runoff Election Turnout Distribution (Restricted Range)")
 
     plt.savefig(RUNOFF_ELECTION_TURNOUT_DISTRIB_RESTR,
                 bbox_inches = "tight")
