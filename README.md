@@ -1,14 +1,17 @@
 # Analysis of 2014 Afghan Presidential Election
 
+Our analysis uses Python and R. To see the images produced by our
+scripts, please refer to the "figures" folder. To read through the
+scripts themselves, please see the "python" and "R" folders.
+
 Completed
 ====
 
-- Code to convert 
+- All code and figures for final paper.
+- All final tweaks.
 
 
 To Do
 ====
 
-- Code to generate two-dimensional histograms of distributions
-  of votes and turnouts to detect election fraud.
-- More to come...
+- Add a link to the final paper.
