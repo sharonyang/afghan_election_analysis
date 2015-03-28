@@ -19,7 +19,8 @@ png(file=savefile, width=600)
 print(plot_abdullah + scale_x_continuous(breaks=c(1,2,3,4,5,6,7,8,9)) +
     ggtitle("Benford Analysis for Abdullah's Votes in Abdullah-Won Districts") +
     scale_fill_manual("Count Type", values = c("#FFAE19", "gray")) +
-    labs(x="Most Significant Digit"))
+    labs(x="Most Significant Digit") +
+    theme(axis.text=element_text(size=16), axis.title.x=element_text(vjust=-0.5)))
 
 # Read data.
 dat2 <- read.csv("clean_data/first_digit_ghani.csv", header=TRUE)
@@ -34,4 +35,5 @@ png(file=savefile, width=600)
 print(plot_ghani + scale_x_continuous(breaks=c(1,2,3,4,5,6,7,8,9)) +
     ggtitle("Benford Analysis for Ghani's Votes in Ghani-Won Districts") +
     scale_fill_manual("Count Type", values = c("#72AFE4", "gray")) +
-    labs(x="Most Significant Digit"))
+    labs(x="Most Significant Digit") +
+    theme(axis.text=element_text(size=16), axis.title.x=element_text(vjust=-0.5)))
