@@ -47,7 +47,8 @@ savefile <- paste("figures/digit_analysis/Ghani_last_digit_polling_stations.png"
 png(file=savefile, width = 600)
 print(votes + geom_histogram(bins=100, fill="#72AFE4") +
     ggtitle("Last-Digit Analysis for Ghani's Votes in in Ghani-Won Polling Stations") +
-    labs(x="Least Significant Digit", y="Count"))
+    labs(x="Least Significant Digit", y="Count") +
+    theme(axis.text=element_text(size=16), axis.title.x=element_text(vjust=-0.5)))
 
 total <- length(last_one) / 10
 curr_t <- c(total, total, total, total, total, total, total,
@@ -73,7 +74,8 @@ savefile <- paste("figures/digit_analysis/Abdullah_last_digit_polling_stations.p
 png(file=savefile, width = 600)
 print(votes + geom_histogram(bins=100, fill="#FFAE19") +
     ggtitle("Last-Digit Analysis for Abdullah's Votes in Abdullah-Won Polling Stations") +
-    labs(x="Least Significant Digit", y="Count"))
+    labs(x="Least Significant Digit", y="Count") +
+    theme(axis.text=element_text(size=16), axis.title.x=element_text(vjust=-0.5)))
 
 total <- length(last_one) / 10
 curr_t <- c(total, total, total, total, total, total, total,
@@ -83,3 +85,4 @@ abdullah = as.data.frame(rbind(last_1, curr_t))
 chisq.test(abdullah)
 last_1
 curr_t
+
